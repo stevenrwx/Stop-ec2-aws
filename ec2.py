@@ -27,7 +27,11 @@ def get_instances(ec2):
                     instance_ids.append(instances['InstanceId'])
                     global arns
                     arns.append(arn)
-                    return instance_ids , arns
+            else:
+                    no_iam = instances['InstanceId']
+                    print(f"instances running without Iam Role attached: ", no_iam)
+
+            return instance_ids, arns
 
 print(get_instances(ec2))
 
