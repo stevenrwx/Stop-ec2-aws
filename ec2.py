@@ -30,6 +30,7 @@ def get_instances(ec2):
             else:
                     no_iam = instances['InstanceId']
                     print(f"instances running without Iam Role attached: ", no_iam)
+                    continue
 
             return instance_ids, arns
 
